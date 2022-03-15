@@ -25,5 +25,6 @@ int print_int(va_list ptr);
 int print_string(va_list ptr);
 int print_percent(va_list ptr);
 char *convert(unsigned int num, int base);
+int specifier(char c, va_list ptr);
 
 #endif 
