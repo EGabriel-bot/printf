@@ -23,14 +23,14 @@ int _printf(const char *format, ...)
 			total += specifier((format[count + 1]), ptr);
 			if (total == -1)
 			{
-				putchar('%');
-				putchar(format[count + 1]);
+				_putchar('%');
+				_putchar(format[count + 1]);
 				total += 1;
 			}
 			count += 2;
 		}
 		real++;
-		putchar(format[count]);
+		_putchar(format[count]);
 	}
 	va_end(ptr);
 	return (real + total);

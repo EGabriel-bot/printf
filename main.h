@@ -19,6 +19,8 @@ typedef struct convert
 	int (*f)(va_list ptr);
 } conv;
 
+int _strlen(char *s);
+int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list ptr);
 int print_int(va_list ptr);
