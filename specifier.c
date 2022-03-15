@@ -9,6 +9,7 @@ int specifier(char c, va_list ptr)
 		{"d", print_int},
 		{"i", print_int},
 		{"%", print_percent},
+		{NULL, NULL},
 	};
 
 	for (idx = 0; idx < 5; idx++)
