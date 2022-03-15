@@ -9,11 +9,15 @@ int print_char(va_list ptr)
 int print_int(va_list ptr)
 {
 	char *string;
-	int num, base, total, store = 0;
+	int num, base = 10, total, store = 0;
 	
 	num = va_arg(ptr, int);
-	base = 10;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	if (num < 0)
 	{
 		store = num;
