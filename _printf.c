@@ -3,15 +3,8 @@
 int _printf(const char *format, ...)
 {
 	va_list ptr;
-	int count, real = 0, idx, total;
+	int count, total = 0, real = 0;
 
-	conv spec[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"d", print_int},
-		{"i", print_int},
-		{"%", print_percent},
-	};
 	if (format == NULL)
 	{
 		exit(-1);
@@ -25,17 +18,17 @@ int _printf(const char *format, ...)
 
 	for (count = 0; format != NULL && *(format + count) != '\0'; count++)
 	{
+	//	printf("\nThis is count: %d, and the char: %c\n", real, format[count]); 
 		if (format[count] == '%')
 		{
-			for (idx = 0; idx < 5; idx++)
+			total = specifier((format[count + 1]), ptr);
+			if (total == -1)
 			{
-				if (format[count + 1] == *(spec[idx].data))
-				{
-					total = spec[idx].f(ptr);
-					count += 2;
-				}
+				putchar('%');
+				putchar(format[count + 1]);
+				total += 1;
 			}
-
+			count += 2;
 		}
 		real++;
 		putchar(format[count]);
