@@ -20,6 +20,10 @@ int _printf(const char *format, ...)
 	{
 		if (format[count] == '%')
 		{
+			if (format[count + 1] == '\0')
+			{
+				break;
+			}
 			total += specifier((format[count + 1]), ptr);
 			if (total == -1)
 			{
