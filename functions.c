@@ -9,13 +9,14 @@ int print_char(va_list ptr)
 int print_int(va_list ptr)
 {
 	char *string;
-	int num, base, total;
+	int num, base, total, store = 0;
 	
 	num = va_arg(ptr, int);
 	base = 10;
 
 	if (num < 0)
 	{
+		store = num;
 		num = (num * -1);
 		_putchar('-');
 	}
@@ -28,9 +29,16 @@ int print_int(va_list ptr)
 		_putchar(*string);
 		string++;
 	}
-	return (total);
-}
 
+	if (store < 0)
+	{
+		return (total + 1);
+	}
+	else
+	{
+		return (total);
+	}
+}
 int print_string(va_list ptr)
 {
 	int real = 0;
