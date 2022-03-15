@@ -7,13 +7,13 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		exit(-1);
+		return(-1);
 	}
 
 	va_start(ptr, format);
 	if (ptr == NULL)
 	{
-		exit(-1);
+		return(-1);
 	}
 
 	for (count = 0; format != NULL && *(format + count) != '\0'; count++)
