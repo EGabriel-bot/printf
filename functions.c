@@ -3,7 +3,7 @@
 int print_char(va_list ptr)
 {
 	putchar(va_arg(ptr, int));
-	return (0);
+	return (1);
 }
 
 int print_int(va_list ptr)
@@ -33,6 +33,7 @@ int print_int(va_list ptr)
 
 int print_string(va_list ptr)
 {
+	int real = 0;
 	char *string;
 
 	string = va_arg(ptr, char *);
@@ -41,8 +42,9 @@ int print_string(va_list ptr)
 	{
 		putchar(*string);
 		string++;
+		real++;
 	}
-	return (0);
+	return (real);
 }
 int print_percent(__attribute__ ((unused))va_list ptr)
 {

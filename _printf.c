@@ -18,10 +18,9 @@ int _printf(const char *format, ...)
 
 	for (count = 0; format != NULL && *(format + count) != '\0'; count++)
 	{
-	//	printf("\nThis is count: %d, and the char: %c\n", real, format[count]); 
 		if (format[count] == '%')
 		{
-			total = specifier((format[count + 1]), ptr);
+			total += specifier((format[count + 1]), ptr);
 			if (total == -1)
 			{
 				putchar('%');
