@@ -1,4 +1,3 @@
-
 #include "main.h"
 
 /**
@@ -40,6 +39,10 @@ int _printf(const char *format, ...)
 				total += 1;
 			}
 			count += 2;
+			if (format[count] == '\0')
+			{
+				break;
+			}
 		}
 		real++;
 		_putchar(format[count]);
