@@ -1,6 +1,13 @@
 
 #include "main.h"
 
+/**
+ * _printf - prints a string and formated characters, and returns length
+ * @format: String being passed from function call
+ *
+ * Return: Length of printed string
+ */
+
 int _printf(const char *format, ...)
 {
 	va_list ptr;
@@ -8,13 +15,13 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return(-1);
+		return (-1);
 	}
 
 	va_start(ptr, format);
 	if (ptr == NULL)
 	{
-		return(-1);
+		return (-1);
 	}
 
 	for (count = 0; format != NULL && *(format + count) != '\0'; count++)

@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+* specifier - function the will point to appropiate functions to use in printf
+* @c: character found in format string after %
+* @ptr: points to variadic argument being passed from main function
+*
+* Return: length of string being printed in pointed functions
+*/
+
 int specifier(char c, va_list ptr)
 {
 	int idx, total = 0;
@@ -22,7 +30,7 @@ int specifier(char c, va_list ptr)
 	}
 	if (idx == 5)
 	{
-		return(-1);
+		return (-1);
 	}
 	else
 	{

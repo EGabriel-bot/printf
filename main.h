@@ -1,17 +1,17 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/*
-* _putchar 
-* specifier - checks for conversion specifier
-* validator - validates what specifier it is, return 1 for true, 0 for false
-* function pointer - points to appropiate function based on specifier
-*/
-
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+/**
+ * struct convert - contains format specifiers and function pointers
+ * @data: variable to store format specifier
+ * @f: pointer to appropiate function
+ *
+ */
 
 typedef struct convert
 {
@@ -29,4 +29,4 @@ int print_percent(va_list ptr);
 char *convert(unsigned int num, int base);
 int specifier(char c, va_list ptr);
 
-#endif 
+#endif
